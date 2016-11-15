@@ -16,7 +16,6 @@
       "version": "1.0.1",
       "type": "platform"
     },
-    "Microsoft.EntityFrameworkCore": "1.0.1",
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.1",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
