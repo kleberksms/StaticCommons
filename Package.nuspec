@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>StaticCommons</id>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <authors>Kleber</authors>
     <owners>Kleber</owners>
     <licenseUrl>https://github.com/kleberksms/StaticCommons/blob/master/LICENSE</licenseUrl>
@@ -10,16 +10,19 @@
     <iconUrl>http://i.imgur.com/taelkwy.png?1</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Static classes for day-to-day utility</description>
-    <releaseNotes>First experimental version</releaseNotes>
+    <releaseNotes>Experimental version</releaseNotes>
     <copyright>Copyright 2016 Kleberksms</copyright>
     <tags>Static Commons Classes Utility</tags>
     <dependencies>
       <dependency id="Microsoft.AspNetCore.Mvc" version="1.0.1" />
       <dependency id="Microsoft.AspNetCore.Mvc.Formatters.Json" version="1.0.1" />
       <dependency id="Microsoft.Extensions.Configuration.Json" version="1.0.0" />
-      <dependency id="Microsoft.NETCore.App" version="1.0.1" />
       <dependency id="Newtonsoft.Json" version="9.0.1" />
-      <dependency id="System.Net.Http" version="4.1.0" />
+      <dependency id="System.Net.Http" version="4.3.0-preview1-24530-04" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="src\StaticCommons\bin\Debug\netcoreapp1.0\*.dll" target="lib" />
+    <file src="src\StaticCommons\bin\Debug\netcoreapp1.0\*.pdb" target="lib" />
+  </files>
 </package>
