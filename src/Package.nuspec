@@ -10,8 +10,8 @@
     <iconUrl>http://i.imgur.com/taelkwy.png?1</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Static classes for day-to-day utility</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <releaseNotes>First experimental version</releaseNotes>
+    <copyright>Copyright 2016 Kleberksms</copyright>
     <tags>Static Commons Classes Utility</tags>
     <dependencies>
       <dependency id="Microsoft.AspNetCore.Mvc" version="1.0.1" />
@@ -19,7 +19,7 @@
       <dependency id="Microsoft.Extensions.Configuration.Json" version="1.0.0" />
       <dependency id="Microsoft.NETCore.App" version="1.0.1" />
       <dependency id="Newtonsoft.Json" version="9.0.1" />
-      <dependency id="System.Net.Http" version="4.3.0-preview1-24530-04" />
+      <dependency id="System.Net.Http" version="4.1.0" />
     </dependencies>
   </metadata>
 </package>
