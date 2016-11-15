@@ -1,3 +1,3 @@
-<img src="https://github.com/kleberksms/StaticCommons/blob/master/logo.svg" alt="StaticCommons"> 
+![Imgur](http://i.imgur.com/taelkwy.png?1)
 ================================
 # StaticCommons
