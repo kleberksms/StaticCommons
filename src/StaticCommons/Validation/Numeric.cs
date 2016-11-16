@@ -2,6 +2,7 @@
 {
     public static class Numeric
     {
+        static Numeric(){}
         public static bool StringIsAnNumber(string input)
         {
             int value;

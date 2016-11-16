@@ -4,6 +4,7 @@ namespace StaticCommons.Validation
 {
     public static class PrimeNumber
     {
+        static PrimeNumber(){}
         public static bool IsPrime(int number)
         {
             if (number <= 1) return false;

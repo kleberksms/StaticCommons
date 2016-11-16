@@ -6,6 +6,10 @@ namespace StaticCommons.Validation
 {
     public static class Vowel
     {
+        static Vowel()
+        {
+            
+        }
         public static bool IsVowel(string v)
         {
             if (v.Length > 1)

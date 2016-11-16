@@ -5,6 +5,7 @@ namespace StaticCommons.Filter.String
 {
     public static class Inflector
     {
+        static Inflector(){}
         public static string Slugfy(this string phrase)
         {
             var str = phrase.RemoveAccent().ToLower();

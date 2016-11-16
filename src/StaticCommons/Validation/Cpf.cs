@@ -5,6 +5,7 @@ namespace StaticCommons.Validation
 {
     public static class Cpf
     {
+        static Cpf(){}
         public static bool IsValid(string cpf)
         {
             var regex = new Regex("[^0-9]");

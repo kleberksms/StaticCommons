@@ -4,6 +4,7 @@ namespace StaticCommons.Filter.String
 {
     public static class Transform
     {
+        static Transform(){}
         public static string ToTitleCase(this string str)
         {
             var tokens = str.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);

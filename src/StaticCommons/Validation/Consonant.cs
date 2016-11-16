@@ -6,6 +6,7 @@ namespace StaticCommons.Validation
 {
     public static class Consonant
     {
+        static Consonant(){}
         public static bool IsConsonant(string c)
         {
             if (c.Length > 1)

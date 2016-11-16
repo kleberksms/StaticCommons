@@ -10,6 +10,7 @@ namespace StaticCommons.Http.Remote
 {
     public static class ServiceRemote
     {
+        static ServiceRemote(){}
         private static byte[] GetBytes(string obj)
         {
             return Encoding.UTF8.GetBytes(obj);

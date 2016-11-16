@@ -6,6 +6,7 @@ namespace StaticCommons.Validation
 {
     public static class NfeAccessKey
     {
+        static NfeAccessKey(){}
         public static bool IsValid(string accessKey)
         {
             var regex = new Regex("[^0-9]");

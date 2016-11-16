@@ -7,6 +7,7 @@ namespace StaticCommons.Filter.String
 {
     public static class Mask
     {
+        static Mask(){}
         public static object FirstOrDefaultByText(string mask, string text)
         {
             var regex = new Regex(FormatterRegex(mask),

@@ -5,6 +5,7 @@ namespace StaticCommons.Validation
 {
     public static class Cnpj
     {
+        static Cnpj(){}
         public static bool IsValid(string cnpj)
         {
             var regex = new Regex("[^0-9]");

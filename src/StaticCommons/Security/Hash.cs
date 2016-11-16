@@ -4,7 +4,7 @@ namespace StaticCommons.Security
 {
     public static class Hash
     {
-
+        static Hash(){}
         public static SHA256 GetSha256Hash()
         {
             var sha256 = SHA256.Create();

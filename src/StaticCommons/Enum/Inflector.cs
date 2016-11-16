@@ -6,6 +6,8 @@ namespace StaticCommons.Enum
 {
     public static class Inflector
     {
+        static Inflector(){}
+
         public static T GetValueFromDescription<T>(string description)
         {
             var type = typeof(T);
@@ -25,6 +27,18 @@ namespace StaticCommons.Enum
                 }
             }
             throw new ArgumentException("Not found.", nameof(description));
+        }
+
+        public static string GetEnumDescription(System.Enum value)
+        {
+            var fi = value.GetType().GetField(value.ToString());
+
+            var attributes =
+                (DescriptionAttribute[])fi.GetCustomAttributes(
+                typeof(DescriptionAttribute),
+                false);
+
+            return attributes.Length > 0 ? attributes[0].Description : value.ToString();
         }
     }
 }
