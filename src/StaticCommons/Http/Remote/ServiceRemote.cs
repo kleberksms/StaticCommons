@@ -10,11 +10,7 @@ namespace StaticCommons.Http.Remote
 {
     public static class ServiceRemote
     {
-        static ServiceRemote(){}
-        private static byte[] GetBytes(string obj)
-        {
-            return Encoding.UTF8.GetBytes(obj);
-        }
+        static ServiceRemote() { }
 
         public static async Task<T> Connect<T>(HttpMethod method, string url)
         {
@@ -36,6 +32,8 @@ namespace StaticCommons.Http.Remote
             }
         }
 
+
+
         public static async Task<T> Connect<T>(HttpMethod method, string url, string uniqueName, string code)
         {
             try
@@ -53,9 +51,9 @@ namespace StaticCommons.Http.Remote
 
                 return responseConverted;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                throw new Exception(exception.ToString());
+                throw;
             }
         }
 
@@ -77,7 +75,9 @@ namespace StaticCommons.Http.Remote
                 {
                     return new HttpResponseMessage(HttpStatusCode.OK);
                 }
+
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
+
             }
             catch (Exception)
             {
@@ -106,6 +106,7 @@ namespace StaticCommons.Http.Remote
                 {
                     return new HttpResponseMessage(HttpStatusCode.OK);
                 }
+
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
             catch (Exception)
@@ -136,7 +137,9 @@ namespace StaticCommons.Http.Remote
                 {
                     return new HttpResponseMessage(HttpStatusCode.OK);
                 }
+
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
+
             }
             catch (Exception)
             {
@@ -162,12 +165,33 @@ namespace StaticCommons.Http.Remote
                 {
                     return new HttpResponseMessage(HttpStatusCode.OK);
                 }
+
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
             catch (Exception)
             {
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
+        }
+
+        public static Guid GenerateNewGuid()
+        {
+            return Guid.NewGuid();
+        }
+
+        public static string GetUserAlias(string uniqueName)
+        {
+            string result = uniqueName.Split('@')[0];
+            return result;
+        }
+        public static byte[] GetBytes(string obj)
+        {
+            return Encoding.UTF8.GetBytes(obj);
+        }
+
+        public static string GetString(byte[] obj)
+        {
+            return Encoding.UTF8.GetString(obj);
         }
     }
 }
