@@ -26,6 +26,10 @@ namespace StaticCommons.Http.Remote
 
                 return responseConverted;
             }
+            catch (TypeInitializationException)
+            {
+                throw ;
+            }
             catch (Exception exception)
             {
                 throw new Exception(exception.ToString());
