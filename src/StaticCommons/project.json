@@ -1,6 +1,6 @@
 {
   "description": "Static Commons",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "authors": [ "Kleber Syd Moraes da Silva" ],
   "packOptions": {},
   "frameworks": {
@@ -17,8 +17,6 @@
       "type": "platform"
     },
     "Microsoft.AspNetCore.Mvc": "1.0.1",
-    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.1",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0",
     "Newtonsoft.Json": "9.0.1",
     "System.Net.Http": "4.3.0-preview1-24530-04"
   }
