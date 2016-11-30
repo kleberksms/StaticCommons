@@ -6,8 +6,6 @@ namespace StaticCommons.Enum
 {
     public static class Inflector
     {
-        static Inflector(){}
-
         public static T GetValueFromDescription<T>(string description)
         {
             var type = typeof(T);
