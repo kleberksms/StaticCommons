@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace StaticCommons.Filter.String
@@ -18,8 +19,9 @@ namespace StaticCommons.Filter.String
 
         public static string RemoveAccent(this string txt)
         {
-            var bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
-            return System.Text.Encoding.ASCII.GetString(bytes);
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            var bytes = Encoding.GetEncoding("Cyrillic").GetBytes(txt);
+            return Encoding.ASCII.GetString(bytes);
         }
 
         public static string Excerpt(this string phrase, int length = 150, string ommission = "...")
