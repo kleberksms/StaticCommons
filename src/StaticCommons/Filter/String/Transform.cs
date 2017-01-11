@@ -25,7 +25,7 @@ namespace StaticCommons.Filter.String
                 obj.GetType()
                     .GetProperties()
                     .Where(p => p.GetValue(obj, null) != null)
-                    .Select(p => p.Name + "=" + WebUtility.HtmlEncode(p.GetValue(obj, null).ToString()));
+                    .Select(p => p.Name.ToLower() + "=" + WebUtility.HtmlEncode(p.GetValue(obj, null).ToString()));
 
             return string.Join("&", properties.ToArray());
         }
