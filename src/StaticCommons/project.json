@@ -1,6 +1,6 @@
 {
   "description": "Static Commons",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "authors": [ "Kleber Syd Moraes da Silva" ],
   "packOptions": {},
   "frameworks": {
@@ -19,6 +19,7 @@
     "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Newtonsoft.Json": "9.0.1",
     "System.Net.Http": "4.3.0-preview1-24530-04",
-    "System.Text.Encoding.CodePages": "4.0.1"
+    "System.Text.Encoding.CodePages": "4.0.1",
+    "System.Reflection.TypeExtensions": "4.3.0"
   }
 }

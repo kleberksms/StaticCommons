@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
+using System.Net;
+using System.Reflection;
 
 namespace StaticCommons.Filter.String
 {
     public static class Transform
     {
-        static Transform(){}
         public static string ToTitleCase(this string str)
         {
             var tokens = str.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
@@ -15,6 +17,17 @@ namespace StaticCommons.Filter.String
             }
 
             return string.Join(" ", tokens);
+        }
+
+        public static string GetQueryString(this object obj)
+        {
+            var properties =
+                obj.GetType()
+                    .GetProperties()
+                    .Where(p => p.GetValue(obj, null) != null)
+                    .Select(p => p.Name + "=" + WebUtility.HtmlEncode(p.GetValue(obj, null).ToString()));
+
+            return string.Join("&", properties.ToArray());
         }
     }
 }
