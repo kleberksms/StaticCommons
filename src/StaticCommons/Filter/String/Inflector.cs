@@ -34,6 +34,7 @@ namespace StaticCommons.Filter.String
 
         public static string OnlyNumbers(string input)
         {
+            if (string.IsNullOrEmpty(input)) return input;
             var rgx = new Regex("[^0-9]");
             var result = rgx.Replace(input, "");
             return result;
@@ -41,6 +42,7 @@ namespace StaticCommons.Filter.String
 
         public static string OnlyAlphanumerics(string input)
         {
+            if (string.IsNullOrEmpty(input)) return input;
             var rgx = new Regex("[^A-Za-z0-9]");
             var result = rgx.Replace(input, "");
             return result;
