@@ -55,9 +55,9 @@ namespace StaticCommons.Http.Remote
 
                 return responseConverted;
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                throw new Exception(exception.ToString());
             }
         }
 
@@ -169,9 +169,9 @@ namespace StaticCommons.Http.Remote
                 return await responseSend.Content.ReadAsStringAsync();
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                throw new Exception(exception.ToString());
             }
         }
 
