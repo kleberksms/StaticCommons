@@ -18,11 +18,12 @@ namespace StaticCommons.Validation
                     if (attribute.Description == description)
                         return true;
                 }
-                else
+
+                if (field.Name == description)
                 {
-                    if (field.Name == description)
-                        return true;
+                    return true;
                 }
+
             }
             return false;
         }
