@@ -175,6 +175,34 @@ namespace StaticCommons.Http.Remote
             }
         }
 
+        public static async Task<T> Connect<T>(HttpMethod method, string url, object body)
+        {
+            try
+            {
+                var client = new HttpClient();
+                var request = new HttpRequestMessage(method, url);
+                request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                if (body != null)
+                {
+                    var serialized = JsonConvert.SerializeObject(body);
+                    request.Content = new ByteArrayContent(GetBytes(serialized));
+                }
+
+                var responseSend = await client.SendAsync(request);
+                var responseJson = responseSend.Content.ReadAsStringAsync().Result;
+
+                var responseConverted = JsonConvert.DeserializeObject<T>(responseJson);
+
+                return responseConverted;
+
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.ToString());
+            }
+        }
+
         public static async Task<HttpResponseMessage> Connect<T>(HttpMethod method, string url, string uniqueName, string code, Guid id)
         {
             try
