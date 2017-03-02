@@ -10,7 +10,6 @@ namespace StaticCommons.Http.Remote
 {
     public static class ServiceRemote
     {
-        static ServiceRemote() { }
 
         public static async Task<T> Connect<T>(HttpMethod method, string url)
         {
@@ -203,7 +202,7 @@ namespace StaticCommons.Http.Remote
             }
         }
 
-        public static async Task<HttpResponseMessage> Connect<T>(HttpMethod method, string url, string uniqueName, string code, Guid id)
+        public static async Task<HttpResponseMessage> Connect(HttpMethod method, string url, string uniqueName, string code, Guid id)
         {
             try
             {
