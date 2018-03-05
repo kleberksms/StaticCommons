@@ -1,13 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EF6A7712-1A9D-4A58-8FC6-F8EAC6F771B6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4FBBEB5D-B47F-4385-9981-FC8FF6BD64D2}"
 	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
 		LICENSE = LICENSE
 		logo.png = logo.png
 		logo.svg = logo.svg
@@ -15,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StaticCommons", "src\StaticCommons\StaticCommons.xproj", "{3DCBC6DA-2EAA-475F-ACD7-55434B3CFC71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticCommons", "src\StaticCommons\StaticCommons.csproj", "{3DCBC6DA-2EAA-475F-ACD7-55434B3CFC71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3DCBC6DA-2EAA-475F-ACD7-55434B3CFC71} = {EF6A7712-1A9D-4A58-8FC6-F8EAC6F771B6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B10B712D-589A-492A-99A1-CE0E875B4196}
 	EndGlobalSection
 EndGlobal
