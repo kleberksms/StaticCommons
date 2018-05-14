@@ -1,4 +1,5 @@
 ﻿
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace StaticCommons.Class.Inflector
@@ -15,6 +16,24 @@ namespace StaticCommons.Class.Inflector
             var serializer = new XmlSerializer(obj.GetType());
             serializer.Serialize(stringwriter, obj);
             return stringwriter.ToString();
+        }
+
+        public static string ToCleanXml(this object obj)
+        {
+            var emptyNamepsaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+            var serializer = new XmlSerializer(obj.GetType());
+            var settings = new XmlWriterSettings
+            {
+                Indent = true,
+                OmitXmlDeclaration = true
+            };
+
+            using (var stream = new System.IO.StringWriter())
+            using (var writer = XmlWriter.Create(stream, settings))
+            {
+                serializer.Serialize(writer, obj, emptyNamepsaces);
+                return stream.ToString();
+            }
         }
 
         public static T ToObject<T>(string xmlText)
