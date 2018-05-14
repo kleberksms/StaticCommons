@@ -12,8 +12,7 @@ namespace StaticCommons.Enum
             if (!type.GetTypeInfo().IsEnum) throw new InvalidOperationException();
             foreach (var field in type.GetFields())
             {
-                var attribute = field.GetCustomAttribute(typeof(DescriptionAttribute)) as DescriptionAttribute;
-                if (attribute != null)
+                if (field.GetCustomAttribute(typeof(DescriptionAttribute)) is DescriptionAttribute attribute)
                 {
                     if (attribute.Description == description)
                         return (T)field.GetValue(null);
