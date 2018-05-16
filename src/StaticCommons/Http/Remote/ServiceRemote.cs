@@ -241,11 +241,13 @@ namespace StaticCommons.Http.Remote
         }
         public static byte[] GetBytes(string obj)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             return Encoding.UTF8.GetBytes(obj);
         }
 
         public static string GetString(byte[] obj)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             return Encoding.UTF8.GetString(obj);
         }
     }
