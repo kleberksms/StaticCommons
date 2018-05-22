@@ -18,6 +18,12 @@ namespace StaticCommons.Class.Inflector
             return stringwriter.ToString();
         }
 
+        // ReSharper disable once InconsistentNaming
+        public static string ToCDATA(this string xml)
+        {
+            return $"<![CDATA[{xml}]]>";
+        }
+
         public static string ToCleanXml(this object obj)
         {
             var emptyNamepsaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
