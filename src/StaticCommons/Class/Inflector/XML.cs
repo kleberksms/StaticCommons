@@ -18,12 +18,6 @@ namespace StaticCommons.Class.Inflector
             return stringwriter.ToString();
         }
 
-        // ReSharper disable once InconsistentNaming
-        public static string ToCDATA(this string xml)
-        {
-            return $"<![CDATA[{xml}]]>";
-        }
-
         public static string ToCleanXml(this object obj)
         {
             var emptyNamepsaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
@@ -40,6 +34,18 @@ namespace StaticCommons.Class.Inflector
                 serializer.Serialize(writer, obj, emptyNamepsaces);
                 return stream.ToString();
             }
+        }
+
+        // ReSharper disable once InconsistentNaming
+        public static string ToCDATA(this string xml)
+        {
+            return $"<![CDATA[{xml}]]>";
+        }
+
+        // ReSharper disable once InconsistentNaming
+        public static string ToCDATA(this object obj, bool cleanXml = true)
+        {
+            return cleanXml ? $"<![CDATA[{obj.ToCleanXml()}]]>" : $"<![CDATA[{obj.ToXml()}]]>";
         }
 
         public static T ToObject<T>(string xmlText)
