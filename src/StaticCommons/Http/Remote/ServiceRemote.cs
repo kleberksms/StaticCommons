@@ -10,7 +10,6 @@ namespace StaticCommons.Http.Remote
 {
     public static class ServiceRemote
     {
-
         public static async Task<T> Connect<T>(HttpMethod method, string url)
         {
             try
@@ -34,8 +33,6 @@ namespace StaticCommons.Http.Remote
                 throw new Exception(exception.ToString());
             }
         }
-
-
 
         public static async Task<T> Connect<T>(HttpMethod method, string url, string uniqueName, string code)
         {
@@ -185,7 +182,7 @@ namespace StaticCommons.Http.Remote
                 if (body != null)
                 {
                     var serialized = JsonConvert.SerializeObject(body);
-                    request.Content = new ByteArrayContent(GetBytes(serialized));
+                    request.Content = new StringContent(serialized, Encoding.UTF8, "application/json");
                 }
 
                 var responseSend = await client.SendAsync(request);
